@@ -1,5 +1,5 @@
 {
-  "version": "2026-07-07T14:40:19.615Z",
+  "version": "2026-07-07T14:45:09.524Z",
   "totalLevels": 30,
   "levels": [
     {
@@ -127,7 +127,8 @@
       "title": "生存口语",
       "description": "生活场景本能",
       "files": [
-        "data/level-21/batch_1783435206567.json"
+        "data/level-21/batch_1783435206567.json",
+        "data/level-21/batch_1783435502028.json"
       ]
     },
     {
@@ -170,7 +171,9 @@
       "id": 28,
       "title": "混合技巧",
       "description": "发音叠加",
-      "files": []
+      "files": [
+        "data/level-28/batch_1783435503641.json"
+      ]
     },
     {
       "id": 29,
