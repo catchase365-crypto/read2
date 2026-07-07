@@ -1,0 +1,188 @@
+{
+  "version": "2026-07-07T14:40:19.615Z",
+  "totalLevels": 30,
+  "levels": [
+    {
+      "id": 1,
+      "title": "辅元连读",
+      "description": "词尾辅音与首元音",
+      "files": []
+    },
+    {
+      "id": 2,
+      "title": "基础失爆",
+      "description": "爆破音收敛",
+      "files": []
+    },
+    {
+      "id": 3,
+      "title": "元音弱读",
+      "description": "功能词弱化",
+      "files": []
+    },
+    {
+      "id": 4,
+      "title": "施瓦音",
+      "description": "中央元音运用",
+      "files": []
+    },
+    {
+      "id": 5,
+      "title": "词重音",
+      "description": "主重音打击",
+      "files": []
+    },
+    {
+      "id": 6,
+      "title": "次重音",
+      "description": "多音节节奏",
+      "files": []
+    },
+    {
+      "id": 7,
+      "title": "意群断句",
+      "description": "词组块化",
+      "files": []
+    },
+    {
+      "id": 8,
+      "title": "短停顿",
+      "description": "基础呼吸感",
+      "files": []
+    },
+    {
+      "id": 9,
+      "title": "长停顿",
+      "description": "长句节奏",
+      "files": []
+    },
+    {
+      "id": 10,
+      "title": "句重音",
+      "description": "核心词凸显",
+      "files": []
+    },
+    {
+      "id": 11,
+      "title": "辅辅连读",
+      "description": "相似辅音合并",
+      "files": []
+    },
+    {
+      "id": 12,
+      "title": "进阶失爆",
+      "description": "复杂词失爆",
+      "files": []
+    },
+    {
+      "id": 13,
+      "title": "发音同化",
+      "description": "相邻音变",
+      "files": []
+    },
+    {
+      "id": 14,
+      "title": "长句降调",
+      "description": "句末落幕感",
+      "files": []
+    },
+    {
+      "id": 15,
+      "title": "疑问升调",
+      "description": "语气控制",
+      "files": []
+    },
+    {
+      "id": 16,
+      "title": "极速吞音",
+      "description": "高频省音",
+      "files": []
+    },
+    {
+      "id": 17,
+      "title": "复合连读",
+      "description": "多词连读",
+      "files": []
+    },
+    {
+      "id": 18,
+      "title": "节奏重塑",
+      "description": "抑扬顿挫",
+      "files": []
+    },
+    {
+      "id": 19,
+      "title": "长句呼吸",
+      "description": "气息控制",
+      "files": []
+    },
+    {
+      "id": 20,
+      "title": "高频短句",
+      "description": "日常极速交流",
+      "files": []
+    },
+    {
+      "id": 21,
+      "title": "生存口语",
+      "description": "生活场景本能",
+      "files": [
+        "data/level-21/batch_1783435206567.json"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "职场词汇",
+      "description": "专业重音",
+      "files": []
+    },
+    {
+      "id": 23,
+      "title": "商务表达",
+      "description": "会议高频连读",
+      "files": []
+    },
+    {
+      "id": 24,
+      "title": "情绪语调",
+      "description": "情感带入",
+      "files": []
+    },
+    {
+      "id": 25,
+      "title": "语速突破",
+      "description": "1.2倍速跟读",
+      "files": []
+    },
+    {
+      "id": 26,
+      "title": "母语习惯",
+      "description": "Native细节",
+      "files": []
+    },
+    {
+      "id": 27,
+      "title": "极限弱化",
+      "description": "极弱读",
+      "files": []
+    },
+    {
+      "id": 28,
+      "title": "混合技巧",
+      "description": "发音叠加",
+      "files": []
+    },
+    {
+      "id": 29,
+      "title": "综合盲测",
+      "description": "全技巧混练",
+      "files": []
+    },
+    {
+      "id": 30,
+      "title": "巅峰心流",
+      "description": "无缝长段落",
+      "files": []
+    }
+  ]
+}
