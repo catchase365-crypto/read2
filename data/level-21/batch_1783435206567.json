@@ -1,0 +1,389 @@
+[
+  {
+    "id": 101,
+    "translation": "面对那些几乎让我一蹶不振的惨痛失败，我意识到挫折并非终点，而是重新塑造我的必经之路。",
+    "words": [
+      {
+        "text": "Confronted",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/kənˈfrʌntɪd/",
+        "detail": "弱读开头的/kən/，重音在第二个音节，压实/ʌ/的短促有力感。",
+        "chunks": [
+          {
+            "t": "con"
+          },
+          {
+            "t": "front",
+            "focus": "secondary"
+          },
+          {
+            "t": "ed"
+          }
+        ]
+      },
+      {
+        "text": "with",
+        "type": "reduction",
+        "tip": "",
+        "link": true,
+        "pause": "empty string",
+        "ipa": "/wɪð/",
+        "detail": "弱读，尾音/ð/轻微咬舌，并与下一个词开头的元音自然连读。",
+        "chunks": [
+          {
+            "t": "with"
+          }
+        ]
+      },
+      {
+        "text": "agonizing",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ˈæɡənaɪzɪŋ/",
+        "detail": "开口度要大，夸张发出梅花音/æ/，展现演讲的充沛情感。",
+        "chunks": [
+          {
+            "t": "a",
+            "focus": "secondary"
+          },
+          {
+            "t": "go"
+          },
+          {
+            "t": "niz"
+          },
+          {
+            "t": "ing"
+          }
+        ]
+      },
+      {
+        "text": "failures",
+        "type": "normal",
+        "tip": "词尾摩擦音/z/后轻微停顿以示强调",
+        "link": false,
+        "pause": "short",
+        "ipa": "/ˈfeɪljərz/",
+        "detail": "双元音/eɪ/发音饱满，过渡到/ljər/时注意卷舌。",
+        "chunks": [
+          {
+            "t": "fail",
+            "focus": "secondary"
+          },
+          {
+            "t": "ures"
+          }
+        ]
+      },
+      {
+        "text": "that",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ðət/",
+        "detail": "关系代词弱读为/ðət/，失去爆破，舌尖顶住上齿龈不送气。",
+        "chunks": [
+          {
+            "t": "that"
+          }
+        ]
+      },
+      {
+        "text": "nearly",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ˈnɪrli/",
+        "detail": "重读第一音节，/ɪr/音程要拉够，突出副词的强调意味。",
+        "chunks": [
+          {
+            "t": "near",
+            "focus": "secondary"
+          },
+          {
+            "t": "ly"
+          }
+        ]
+      },
+      {
+        "text": "broke",
+        "type": "normal",
+        "tip": "",
+        "link": true,
+        "pause": "empty string",
+        "ipa": "/broʊk/",
+        "detail": "双元音/oʊ/由大到小圆唇，尾音/k/与后面的元音连读成 /broʊ.kmi/",
+        "chunks": [
+          {
+            "t": "broke",
+            "focus": "secondary"
+          }
+        ]
+      },
+      {
+        "text": "me,",
+        "type": "normal",
+        "tip": "逗号处长停顿，沉淀情感",
+        "link": false,
+        "pause": "long",
+        "ipa": "/mi/",
+        "detail": "长元音/i/饱满，音调在句中略微下沉完成意群隔离。",
+        "chunks": [
+          {
+            "t": "me"
+          }
+        ]
+      },
+      {
+        "text": "I",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/aɪ/",
+        "detail": "饱满的主格代词发音，为后面的核心动词蓄势。",
+        "chunks": [
+          {
+            "t": "I"
+          }
+        ]
+      },
+      {
+        "text": "realized",
+        "type": "normal",
+        "tip": "词尾/d/失爆，舌尖顶住硬腭不送气直接发下一个词",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ˈriːəlaɪzd/",
+        "detail": "核心动词，重音在开头，双元音/aɪ/清晰完整。",
+        "chunks": [
+          {
+            "t": "re",
+            "focus": "secondary"
+          },
+          {
+            "t": "al"
+          },
+          {
+            "t": "ized"
+          }
+        ]
+      },
+      {
+        "text": "that",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ðət/",
+        "detail": "宾语从句引导词极度弱化，快速滑过。",
+        "chunks": [
+          {
+            "t": "that"
+          }
+        ]
+      },
+      {
+        "text": "setbacks",
+        "type": "normal",
+        "tip": "词中/t/失爆，只做口型不发音",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ˈsetbæks/",
+        "detail": "前半部分/set/短促，后半部分/bæks/注意清辅音丛的清晰度。",
+        "chunks": [
+          {
+            "t": "set",
+            "focus": "secondary"
+          },
+          {
+            "t": "backs"
+          }
+        ]
+      },
+      {
+        "text": "were",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/wər/",
+        "detail": "弱读为卷舌元音/wər/，轻轻带过即可。",
+        "chunks": [
+          {
+            "t": "were"
+          }
+        ]
+      },
+      {
+        "text": "not",
+        "type": "normal",
+        "tip": "句重音所在，大开口，音调提高",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/nɑːt/",
+        "detail": "全句核心否定词，强读，尾音/t/清晰断开以产生强调力场。",
+        "chunks": [
+          {
+            "t": "not",
+            "focus": "primary"
+          }
+        ]
+      },
+      {
+        "text": "the",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ðə/",
+        "detail": "弱读，定冠词点到为止。",
+        "chunks": [
+          {
+            "t": "the"
+          }
+        ]
+      },
+      {
+        "text": "end,",
+        "type": "normal",
+        "tip": "逗号处短停顿，形成对比语调",
+        "link": false,
+        "pause": "short",
+        "ipa": "/end/",
+        "detail": "单元音/e/发音短促有力，舌尖顶住/nd/收尾。",
+        "chunks": [
+          {
+            "t": "end",
+            "focus": "secondary"
+          }
+        ]
+      },
+      {
+        "text": "but",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/bət/",
+        "detail": "连词弱读，/t/做失去爆破处理，迅速过渡到后面的主语。",
+        "chunks": [
+          {
+            "t": "but"
+          }
+        ]
+      },
+      {
+        "text": "the",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ðə/",
+        "detail": "弱读，元音模糊化。",
+        "chunks": [
+          {
+            "t": "the"
+          }
+        ]
+      },
+      {
+        "text": "forge",
+        "type": "normal",
+        "tip": "句重音，铿锵有力",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/fɔːrdʒ/",
+        "detail": "隐喻核心词，强读。后卷舌音/ɔːr/要饱满，破擦音/dʒ/收尾沉稳。",
+        "chunks": [
+          {
+            "t": "forge",
+            "focus": "primary"
+          }
+        ]
+      },
+      {
+        "text": "that",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ðət/",
+        "detail": "弱读为/ðət/，快速带过。",
+        "chunks": [
+          {
+            "t": "that"
+          }
+        ]
+      },
+      {
+        "text": "remade",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/ˌriːˈmeɪd/",
+        "detail": "重音在后半部分/meɪd/，双元音后紧跟清脆的/d/落音。",
+        "chunks": [
+          {
+            "t": "re"
+          },
+          {
+            "t": "made",
+            "focus": "secondary"
+          }
+        ]
+      },
+      {
+        "text": "who",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "empty string",
+        "ipa": "/huː/",
+        "detail": "轻微弱读，保持字音清晰即可。",
+        "chunks": [
+          {
+            "t": "who"
+          }
+        ]
+      },
+      {
+        "text": "I",
+        "type": "normal",
+        "tip": "",
+        "link": true,
+        "pause": "empty string",
+        "ipa": "/aɪ/",
+        "detail": "与后面的am发生半元音连读，过渡出微弱的/j/音。",
+        "chunks": [
+          {
+            "t": "I"
+          }
+        ]
+      },
+      {
+        "text": "am.",
+        "type": "normal",
+        "tip": "句尾长停顿，语调完全下沉完成演讲输出",
+        "link": false,
+        "pause": "long",
+        "ipa": "/æm/",
+        "detail": "作为句尾实词不可弱读，清晰发出梅花音/æ/，并在闭口音/m/中结束全句。",
+        "chunks": [
+          {
+            "t": "am",
+            "focus": "secondary"
+          }
+        ]
+      }
+    ]
+  }
+]
