@@ -1,0 +1,507 @@
+[
+  {
+    "id": 101,
+    "translation": "随着人工智能继续以惊人的速度发展，它不仅是在自动化琐碎的任务，而且正在深刻地重塑我们作为人类在这个世界上连接、工作和感知自身存在的方式。",
+    "words": [
+      {
+        "text": "As",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/əz/",
+        "detail": "功能词弱读，元音弱化为模糊元音 /ə/。",
+        "chunks": [
+          {
+            "t": "As"
+          }
+        ]
+      },
+      {
+        "text": "artificial",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ˌɑːrtɪˈfɪʃl/",
+        "detail": "次重音在第一音节，主重音在第三音节，注意/ʃ/的舌位，双唇微翘。",
+        "chunks": [
+          {
+            "t": "ar",
+            "focus": "secondary"
+          },
+          {
+            "t": "ti"
+          },
+          {
+            "t": "fi",
+            "focus": "secondary"
+          },
+          {
+            "t": "cial"
+          }
+        ]
+      },
+      {
+        "text": "intelligence",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ɪnˈtelɪdʒəns/",
+        "detail": "重音在第二音节，注意/dʒ/的发音，舌尖和舌叶抬起接触齿龈。",
+        "chunks": [
+          {
+            "t": "in"
+          },
+          {
+            "t": "tel",
+            "focus": "secondary"
+          },
+          {
+            "t": "i"
+          },
+          {
+            "t": "gence"
+          }
+        ]
+      },
+      {
+        "text": "continues",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/kənˈtɪnjuːz/",
+        "detail": "首音节弱读，重音在第二音节，词尾s发浊辅音/z/。",
+        "chunks": [
+          {
+            "t": "con"
+          },
+          {
+            "t": "tin",
+            "focus": "secondary"
+          },
+          {
+            "t": "ues"
+          }
+        ]
+      },
+      {
+        "text": "to",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/tə/",
+        "detail": "介词弱读，元音由/uː/弱化为/ə/。",
+        "chunks": [
+          {
+            "t": "to"
+          }
+        ]
+      },
+      {
+        "text": "evolve",
+        "type": "normal",
+        "tip": "词尾辅音与下一词首元音连读",
+        "link": true,
+        "pause": "",
+        "ipa": "/ɪˈvɑːlv/",
+        "detail": "重音在第二音节，词尾/v/要发得轻短，并与at产生连读。",
+        "chunks": [
+          {
+            "t": "e"
+          },
+          {
+            "t": "volve",
+            "focus": "secondary"
+          }
+        ]
+      },
+      {
+        "text": "at",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ət/",
+        "detail": "介词弱读，/t/受后面/ə/影响，在此处形成弱连读。",
+        "chunks": [
+          {
+            "t": "at"
+          }
+        ]
+      },
+      {
+        "text": "an",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ən/",
+        "detail": "冠词弱读，快速掠过。",
+        "chunks": [
+          {
+            "t": "an"
+          }
+        ]
+      },
+      {
+        "text": "astonishing",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/əˈstɑːnɪʃɪŋ/",
+        "detail": "重音在第二音节，注意后鼻音/ŋ/发音到位，舌根抬起顶住软腭。",
+        "chunks": [
+          {
+            "t": "as"
+          },
+          {
+            "t": "ton",
+            "focus": "secondary"
+          },
+          {
+            "t": "ish"
+          },
+          {
+            "t": "ing"
+          }
+        ]
+      },
+      {
+        "text": "pace,",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "short",
+        "ipa": "/peɪs/",
+        "detail": "双元音/eɪ/发音要饱满，从/e/滑向/ɪ/，词尾有逗号，停顿并语调微升。",
+        "chunks": [
+          {
+            "t": "pace"
+          }
+        ]
+      },
+      {
+        "text": "it",
+        "type": "normal",
+        "tip": "失去爆破，做好发音准备但不送气",
+        "link": false,
+        "pause": "",
+        "ipa": "/ɪt/",
+        "detail": "/t/遭遇后面的/ɪ/（来自is），此处通常做弱读或省音处理，或直接成阻不放气。",
+        "chunks": [
+          {
+            "t": "it"
+          }
+        ]
+      },
+      {
+        "text": "is",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ɪz/",
+        "detail": "词尾s发浊辅音/z/。",
+        "chunks": [
+          {
+            "t": "is"
+          }
+        ]
+      },
+      {
+        "text": "not",
+        "type": "normal",
+        "tip": "失去爆破",
+        "link": false,
+        "pause": "",
+        "ipa": "/nɑːt/",
+        "detail": "/t/后面接辅音/m/，发生失爆，只留时值不送气。",
+        "chunks": [
+          {
+            "t": "not"
+          }
+        ]
+      },
+      {
+        "text": "merely",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ˈmɪrli/",
+        "detail": "重音在第一音节，卷舌元音/ɪr/要清晰。",
+        "chunks": [
+          {
+            "t": "mere",
+            "focus": "secondary"
+          },
+          {
+            "t": "ly"
+          }
+        ]
+      },
+      {
+        "text": "automating",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ˈɔːtəmeɪtɪŋ/",
+        "detail": "主重音在第一音节，第三音节双元音/eɪ/清晰，美音中/t/会发生闪音化。",
+        "chunks": [
+          {
+            "t": "au",
+            "focus": "secondary"
+          },
+          {
+            "t": "to"
+          },
+          {
+            "t": "mat"
+          },
+          {
+            "t": "ing"
+          }
+        ]
+      },
+      {
+        "text": "mundane",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/mʌnˈdeɪn/",
+        "detail": "重音在第二音节，双元音/eɪ/发音饱满。",
+        "chunks": [
+          {
+            "t": "mun"
+          },
+          {
+            "t": "dane",
+            "focus": "secondary"
+          }
+        ]
+      },
+      {
+        "text": "tasks,",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "short",
+        "ipa": "/tæsks/",
+        "detail": "注意/sks/多辅音连缀的发音，不要漏掉任何一个清辅音。意群停顿。",
+        "chunks": [
+          {
+            "t": "tasks"
+          }
+        ]
+      },
+      {
+        "text": "but",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/bət/",
+        "detail": "连词弱读，元音弱化，/t/发生失爆。",
+        "chunks": [
+          {
+            "t": "but"
+          }
+        ]
+      },
+      {
+        "text": "profoundly",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/prəˈfaʊndli/",
+        "detail": "首音节弱读，第二音节重读，双元音/aʊ/张大嘴滑向/ʊ/，/d/弱化省音。",
+        "chunks": [
+          {
+            "t": "pro"
+          },
+          {
+            "t": "found",
+            "focus": "secondary"
+          },
+          {
+            "t": "ly"
+          }
+        ]
+      },
+      {
+        "text": "reshaping",
+        "type": "normal",
+        "tip": "句中绝对核心关键词，强调重读",
+        "link": false,
+        "pause": "",
+        "ipa": "/ˌriːˈʃeɪpɪŋ/",
+        "detail": "本句的句重音之一。重音在第二音节，/ʃ/音要饱满，强调重读彰显对比。",
+        "chunks": [
+          {
+            "t": "re",
+            "focus": "secondary"
+          },
+          {
+            "t": "shap",
+            "focus": "primary"
+          },
+          {
+            "t": "ing"
+          }
+        ]
+      },
+      {
+        "text": "how",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/haʊ/",
+        "detail": "双元音/aʊ/发音饱满，饱含气流送出。",
+        "chunks": [
+          {
+            "t": "how"
+          }
+        ]
+      },
+      {
+        "text": "we",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/wi/",
+        "detail": "代词轻读，元音稍短。",
+        "chunks": [
+          {
+            "t": "we"
+          }
+        ]
+      },
+      {
+        "text": "connect,",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "short",
+        "ipa": "/kəˈnekt/",
+        "detail": "重音在第二音节，词尾/kt/辅音连缀，/t/轻发，排比句首项微停顿升调。",
+        "chunks": [
+          {
+            "t": "con"
+          },
+          {
+            "t": "nect"
+          }
+        ]
+      },
+      {
+        "text": "work,",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "short",
+        "ipa": "/wɜːrk/",
+        "detail": "卷舌长元音/ɜːr/发音饱满，排比句次项微停顿升调。",
+        "chunks": [
+          {
+            "t": "work"
+          }
+        ]
+      },
+      {
+        "text": "and",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ənd/",
+        "detail": "连词弱读，常见省音为/ən/，/d/不发音。",
+        "chunks": [
+          {
+            "t": "and"
+          }
+        ]
+      },
+      {
+        "text": "perceive",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/pərˈsiːv/",
+        "detail": "第一音节弱读卷舌，第二音节重读，长元音/iː/拉长。",
+        "chunks": [
+          {
+            "t": "per"
+          },
+          {
+            "t": "ceive",
+            "focus": "secondary"
+          }
+        ]
+      },
+      {
+        "text": "our",
+        "type": "reduction",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ɑːr/",
+        "detail": "物主代词常弱读为与are同音的/ɑːr/。",
+        "chunks": [
+          {
+            "t": "our"
+          }
+        ]
+      },
+      {
+        "text": "very",
+        "type": "normal",
+        "tip": "",
+        "link": false,
+        "pause": "",
+        "ipa": "/ˈveri/",
+        "detail": "重音在第一音节，唇齿相接发/v/。",
+        "chunks": [
+          {
+            "t": "ve",
+            "focus": "secondary"
+          },
+          {
+            "t": "ry"
+          }
+        ]
+      },
+      {
+        "text": "existence.",
+        "type": "normal",
+        "tip": "句末核心词，重读并降调结句",
+        "link": false,
+        "pause": "long",
+        "ipa": "/ɪɡˈzɪstəns/",
+        "detail": "本句终极核心词，重音在第二音节。字母x发浊辅音组合/ɡz/。整句在此完美降调结束。",
+        "chunks": [
+          {
+            "t": "ex"
+          },
+          {
+            "t": "is",
+            "focus": "primary"
+          },
+          {
+            "t": "tence"
+          }
+        ]
+      }
+    ]
+  }
+]
