@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChronosNex - 英语口语发音与流利度纯享训练</title>
+    <style>
+        /* 1. 静态流体背景配置 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .fluid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #161b22, #0d1117);
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.12;
+        }
+        .c-emerald  { top: -10%; left: -10%; width: max(40vw, 40vh); height: max(40vw, 40vh); background: #10b981; }
+        .c-violet   { top: -10%; right: -10%; width: max(45vw, 45vh); height: max(45vw, 45vh); background: #8b5cf6; }
+        .c-seablue  { bottom: -10%; left: -10%; width: max(50vw, 50vh); height: max(50vw, 50vh); background: #06b6d4; }
+        .c-magenta  { bottom: -10%; right: -10%; width: max(40vw, 40vh); height: max(40vw, 40vh); background: #ec4899; }
+        .c-yellow   { top: 40%; left: 40%; width: max(35vw, 35vh); height: max(35vw, 35vh); background: #f59e0b; }
+
+        /* 2. 磨砂玻璃容器 */
+        .glass-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(22, 27, 34, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 35px;
+            background: linear-gradient(45deg, #06b6d4, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        /* 3. 核心流式卡片 */
+        .sentence-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        /* 统一的流动式文本级 */
+        .interactive-flow-zone {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end; 
+            row-gap: 36px;        
+            column-gap: 6px;
+            margin-bottom: 25px;
+            padding: 10px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 单词复合列组件：上下绑定 */
+        .word-column {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* 悬浮在单词头顶的发音小诀窍 */
+        .pronunciation-tip {
+            font-size: 0.75rem;
+            color: #f59e0b;
+            text-align: center;
+            white-space: nowrap;
+            margin-bottom: 10px;
+            background: rgba(245, 158, 11, 0.1);
+            padding: 1px 5px;
+            border-radius: 4px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            pointer-events: none;
+        }
+
+        /* 单词文本主体 */
+        .word-text {
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: #c9d1d9;
+            display: inline-flex !important;
+            flex-direction: row !important;
+            position: relative;
+        }
+
+        .word-text:hover, .word-text.active-word {
+            background: rgba(6, 182, 212, 0.2);
+            color: #fff;
+            box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+        }
+
+        /* 发音重音与弱读样式 */
+        .stress { color: #ffffff; font-weight: 700; }
+        .reduction { color: #e6edf3; opacity: 0.25; font-size: 1.25rem; }
+
+        .letter-chunk { position: relative; display: inline-block; }
+
+        /* 句重音/核心强调词 (Primary): 亮金橘色，稍微大一点，带发光效果 */
+        .letter-chunk.chunk-primary::after {
+            content: "▲";
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: #f59e0b;
+            text-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+            pointer-events: none;
+        }
+
+        /* 词重音/一般强调词 (Secondary): 湖蓝色，更小更克制 */
+        .letter-chunk.chunk-secondary::after {
+            content: "▲";
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.55rem;
+            color: #06b6d4;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* 连读符号 */
+        .link-next::after {
+            content: "‿";
+            position: absolute;
+            right: -6px;
+            bottom: -6px;
+            color: #06b6d4;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* 停顿控制组件 */
+        .pause-container {
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+            align-self: flex-end;
+            padding-bottom: 4px;
+            user-select: none;
+        }
+        .pause-short { margin: 0 6px 0 2px; color: #8b5cf6; font-weight: bold; font-size: 1.3rem; }
+        .pause-long { margin: 0 12px 0 4px; color: #ec4899; font-weight: bold; font-size: 1.3rem; border-right: 2px dashed rgba(236, 72, 153, 0.4); padding-right: 4px; }
+
+        /* 单词发音细节固定舱 */
+        .inspector-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(88, 166, 255, 0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        .inspector-hidden { display: none !important; }
+        .inspector-left { flex: 1; }
+        .inspector-word { font-size: 1.3rem; font-weight: bold; color: #58a6ff; margin-bottom: 4px; }
+        .inspector-ipa { font-family: "Lucida Sans Unicode", sans-serif; font-size: 1.1rem; color: #10b981; background: rgba(16, 185, 129, 0.1); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+        .inspector-desc { font-size: 0.85rem; color: #8b949e; line-height: 1.4; }
+
+        /* 意译层 */
+        .translation-zone { font-size: 0.95rem; color: #8b949e; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; line-height: 1.5; }
+
+        /* 控制按钮 */
+        .control-panel { display: flex; gap: 12px; margin-top: 20px; }
+        .btn { background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #fff; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+        .btn:hover { background: #10b981; box-shadow: 0 0 12px rgba(16, 185, 129, 0.4); }
+        .btn-slow { background: rgba(139, 92, 246, 0.15); border: 1px solid #8b5cf6; }
+        .btn-slow:hover { background: #8b5cf6; box-shadow: 0 0 12px rgba(139, 92, 246, 0.4); }
+        .btn-fast { background: rgba(236, 72, 153, 0.15); border: 1px solid #ec4899; }
+        .btn-fast:hover { background: #ec4899; box-shadow: 0 0 12px rgba(236, 72, 153, 0.4); }
+
+        /* 关卡大厅视图样式 */
+        #lobby-view { display: block; }
+        #training-view { display: none; }
+        
+        /* 横向水平关卡选择器 */
+        .level-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            scrollbar-width: none; 
+        }
+        .level-slider::-webkit-scrollbar { display: none; }
+        
+        .level-card {
+            flex: 0 0 auto;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 12px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 160px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .level-card.active, .level-card:hover {
+            background: rgba(6, 182, 212, 0.15);
+            border-color: rgba(6, 182, 212, 0.6);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+            transform: translateY(-2px);
+        }
+        .level-card h3 { font-size: 1.2rem; color: #fff; margin: 0 0 6px 0; text-shadow: 0 0 10px rgba(6,182,212,0.5); }
+        .level-card p { font-size: 0.8rem; color: #8b949e; margin: 0; line-height: 1.3; }
+
+        /* 竖向碎片列表 */
+        .stage-list { display: flex; flex-direction: column; gap: 12px; }
+        .stage-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 18px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .stage-item::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 4px; background: #10b981; opacity: 0; transition: 0.2s; }
+        .stage-item:hover::before { opacity: 1; }
+        .stage-item:hover { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.3); transform: translateX(4px); }
+        .stage-item-title { font-size: 1.05rem; color: #e6edf3; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        .stage-item-meta { font-size: 0.85rem; color: #8b949e; background: rgba(0,0,0,0.2); padding: 4px 10px; border-radius: 12px; }
+        
+        .back-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #c9d1d9;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .back-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; border-color: rgba(255, 255, 255, 0.3); }
+
+        /* 移动端适配 */
+        @media (max-width: 600px) {
+            .glass-container { margin: 15px auto; padding: 15px; width: 94%; box-sizing: border-box; }
+            h1 { font-size: 1.2rem; margin-bottom: 20px; }
+            .sentence-card { padding: 15px; margin-bottom: 20px; }
+            .word-text { font-size: 1.05rem; padding: 1px 3px; }
+            .interactive-flow-zone { row-gap: 26px; column-gap: 2px; }
+            .pronunciation-tip { font-size: 0.65rem; padding: 0 4px; margin-bottom: 6px; }
+            .link-next::after { font-size: 1rem; right: -4px; bottom: -5px; }
+            .inspector-panel { flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px; }
+            .control-panel { flex-direction: column; }
+            .btn { width: 100%; padding: 12px; text-align: center; justify-content: center; }
+            .stage-item { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .stage-item-meta { align-self: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fluid-bg">
+        <div class="circle c-emerald"></div>
+        <div class="circle c-violet"></div>
+        <div class="circle c-seablue"></div>
+        <div class="circle c-magenta"></div>
+        <div class="circle c-yellow"></div>
+    </div>
+
+    <div class="glass-container">
+        <h1>口语发音技巧与断句操练</h1>
+        
+        <div id="lobby-view">
+            <div class="level-slider" id="level-slider">
+                </div>
+            <div class="stage-list" id="stage-list">
+                <div style="text-align: center; color: #8b949e; padding: 30px;">正在连接 GitHub 卫星，拉取您的专属数据地图...</div>
+            </div>
+        </div>
+
+        <div id="training-view">
+            <button class="back-btn" onclick="returnToLobby()">⬅ 退出训练，返回大厅</button>
+            <div id="training-board"></div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化精选演示数据：用于还没上传任何数据时的保底显示
+        const defaultData = [
+            {
+                "id": 1,
+                "translation": "我们必须停止依赖直觉，而应该开始根据精准的数据指标来客观评估当前的业务进展。",
+                "words": [
+                    {"text": "We", "type": "reduction", "tip": "", "link": false, "pause": "", "ipa": "/wi/", "detail": "弱读，滑过即可。", "chunks": [{"t": "We"}]},
+                    {"text": "must", "type": "reduction", "tip": "t失爆", "link": false, "pause": "", "ipa": "/məs/", "detail": "弱读且结尾/t/完全失去爆破，只留舌位。", "chunks": [{"t": "must"}]},
+                    {"text": "stop", "type": "stress", "tip": "", "link": false, "pause": "", "ipa": "/stɑːp/", "detail": "单音节词重读，无需在特定字母下加三角。", "chunks": [{"t": "stop"}]},
+                    {"text": "relying", "type": "stress", "tip": "", "link": true, "pause": "", "ipa": "/rɪˈlaɪɪŋ/", "detail": "多音节词，重音在ly音节上。", "chunks": [{"t": "re"}, {"t": "ly", "focus": true}, {"t": "ing"}]},
+                    {"text": "on", "type": "reduction", "tip": "", "link": false, "pause": "", "ipa": "/ɑːn/", "detail": "弱读，融入前面的连读中。", "chunks": [{"t": "on"}]},
+                    {"text": "intuition,", "type": "stress", "tip": "", "link": false, "pause": "short", "ipa": "/ˌɪntuˈɪʃn/", "detail": "主重音在ti音节上。", "chunks": [{"t": "intu"}, {"t": "i", "focus": true}, {"t": "tion,"}]},
+                    {"text": "and", "type": "reduction", "tip": "d失爆", "link": false, "pause": "", "ipa": "/ən/", "detail": "极弱，/d/不发音。", "chunks": [{"t": "and"}]},
+                    {"text": "start", "type": "stress", "tip": "", "link": false, "pause": "", "ipa": "/stɑːrt/", "detail": "清晰重拍。", "chunks": [{"t": "start"}]},
+                    {"text": "evaluating", "type": "stress", "tip": "", "link": false, "pause": "", "ipa": "/ɪˈvæljueɪtɪŋ/", "detail": "重音在va音节。", "chunks": [{"t": "e"}, {"t": "va", "focus": true}, {"t": "luating"}]},
+                    {"text": "business", "type": "stress", "tip": "", "link": false, "pause": "", "ipa": "/ˈbɪznəs/", "detail": "重音在首音节bu。", "chunks": [{"t": "bu", "focus": true}, {"t": "siness"}]},
+                    {"text": "metrics", "type": "stress", "tip": "", "link": false, "pause": "short", "ipa": "/ˈmetrɪks/", "detail": "重音在met音节。", "chunks": [{"t": "met", "focus": true}, {"t": "rics"}]},
+                    {"text": "based", "type": "stress", "tip": "d-o连读", "link": true, "pause": "", "ipa": "/beɪst/", "detail": "尾辅音/t/直接与后面的元音连读。", "chunks": [{"t": "based"}]},
+                    {"text": "on", "type": "reduction", "tip": "", "link": false, "pause": "", "ipa": "/ɑːn/", "detail": "弱读。", "chunks": [{"t": "on"}]},
+                    {"text": "objective", "type": "stress", "tip": "", "link": false, "pause": "", "ipa": "/əbˈdʒektɪv/", "detail": "重音在jec音节。", "chunks": [{"t": "ob"}, {"t": "jec", "focus": true}, {"t": "tive"}]},
+                    {"text": "performance", "type": "stress", "tip": "", "link": false, "pause": "", "ipa": "/pərˈfɔːrməns/", "detail": "重音在for音节。", "chunks": [{"t": "per"}, {"t": "for", "focus": true}, {"t": "mance"}]},
+                    {"text": "data.", "type": "stress", "tip": "", "link": false, "pause": "long", "ipa": "/ˈdeɪtə/", "detail": "完美降调落幕。", "chunks": [{"t": "da", "focus": true}, {"t": "ta."}]}
+                ]
+            }
+        ];
+
+        let globalIndexData = null;
+
+        // 1. 初始化拉取全局地图数据
+        async function fetchGlobalIndex() {
+            try {
+                const res = await fetch('data/index.json?t=' + Date.now()); 
+                if (!res.ok) throw new Error("未找到全局地图文件");
+                globalIndexData = await res.json();
+                renderLobbyLevels();
+            } catch (e) {
+                // 如果是新仓库，还没上传任何数据，渲染新手演示关卡！
+                console.warn(e);
+                renderFallbackDemo();
+            }
+        }
+
+        function renderFallbackDemo() {
+            const slider = document.getElementById('level-slider');
+            slider.innerHTML = `
+                <div class="level-card active" onclick="this.classList.add('active')">
+                    <h3>新手演示</h3><p>系统默认破冰关卡</p>
+                </div>
+            `;
+            
+            const list = document.getElementById('stage-list');
+            list.innerHTML = `
+                <div style="margin-bottom: 15px; color:#f59e0b; font-size:0.9rem; text-align:center;">
+                    ⚠️ 未检测到云端索引，当前显示为本地默认演示数据。<br>请使用【数据管理舱】投递卡片并更新索引！
+                </div>
+                <div class="stage-item" onclick="loadDemoStage()">
+                    <div class="stage-item-title">
+                        🎯 神经重塑任务 01 (演示)
+                        <span style="font-size:0.75rem; font-weight:normal; color:#10b981; margin-left:8px; border: 1px solid rgba(16,185,129,0.3); padding: 2px 6px; border-radius: 4px;">体验核心功能</span>
+                    </div>
+                    <div class="stage-item-meta">⏳ 系统内置</div>
+                </div>
+            `;
+        }
+
+        function loadDemoStage() {
+            document.getElementById('lobby-view').style.display = 'none';
+            document.getElementById('training-view').style.display = 'block';
+            renderBoard(defaultData);
+        }
+
+        // 2. 渲染顶部横向关卡导航
+        function renderLobbyLevels() {
+            const slider = document.getElementById('level-slider');
+            slider.innerHTML = '';
+            
+            if (!globalIndexData || !globalIndexData.levels) return;
+            
+            let hasData = false;
+            globalIndexData.levels.forEach((lv, idx) => {
+                if (lv.files && lv.files.length > 0) {
+                    hasData = true;
+                    const card = document.createElement('div');
+                    card.className = 'level-card';
+                    card.innerHTML = `<h3>Level ${lv.id}</h3><p>${lv.title}</p>`;
+                    card.onclick = () => {
+                        document.querySelectorAll('.level-card').forEach(el => el.classList.remove('active'));
+                        card.classList.add('active');
+                        renderStages(lv);
+                    };
+                    slider.appendChild(card);
+                    
+                    if (document.querySelectorAll('.level-card').length === 1) card.click();
+                }
+            });
+            
+            if (!hasData) renderFallbackDemo();
+        }
+
+        // 3. 渲染竖向具体的碎片任务
+        function renderStages(levelData) {
+            const list = document.getElementById('stage-list');
+            list.innerHTML = '';
+            
+            levelData.files.forEach((filePath, index) => {
+                const match = filePath.match(/batch_(\d+)\.json/);
+                const timeStr = match ? new Date(parseInt(match[1])).toLocaleString('zh-CN', {month:'short', day:'numeric', hour:'2-digit', minute:'2-digit'}) : `训练序列 ${index + 1}`;
+                
+                const item = document.createElement('div');
+                item.className = 'stage-item';
+                item.innerHTML = `
+                    <div class="stage-item-title">
+                        🎯 神经重塑任务 0${index + 1}
+                        <span style="font-size:0.75rem; font-weight:normal; color:#10b981; margin-left:8px; border: 1px solid rgba(16,185,129,0.3); padding: 2px 6px; border-radius: 4px;">${levelData.title}</span>
+                    </div>
+                    <div class="stage-item-meta">⏳ 建立于 ${timeStr}</div>
+                `;
+                item.onclick = () => loadStageData(filePath);
+                list.appendChild(item);
+            });
+        }
+
+        // 4. 点击任务进入具体渲染界面
+        async function loadStageData(filePath) {
+            try {
+                document.getElementById('lobby-view').style.display = 'none';
+                document.getElementById('training-view').style.display = 'block';
+                document.getElementById('training-board').innerHTML = '<div style="text-align:center; padding: 60px; color:#58a6ff; font-size:1.1rem;"><span style="display:inline-block; animation: pulse 1.5s infinite;">🧠 正在下载神经元连接图谱...</span></div>';
+                
+                const res = await fetch(filePath + '?t=' + Date.now());
+                if (!res.ok) throw new Error('云端卡片数据拉取失败');
+                const data = await res.json();
+                
+                renderBoard(data);
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } catch (e) {
+                alert("加载失败：" + e.message);
+                returnToLobby();
+            }
+        }
+
+        // 5. 返回大厅控制
+        function returnToLobby() {
+            document.getElementById('lobby-view').style.display = 'block';
+            document.getElementById('training-view').style.display = 'none';
+            document.getElementById('training-board').innerHTML = '';
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+        }
+
+        function renderBoard(data) {
+            const board = document.getElementById('training-board');
+            board.innerHTML = '';
+
+            data.forEach((item, sentenceIdx) => {
+                const card = document.createElement('div');
+                card.className = 'sentence-card';
+                const flowZone = document.createElement('div');
+                flowZone.className = 'interactive-flow-zone';
+                let fullText = "";
+
+                item.words.forEach((w, wordIdx) => {
+                    fullText += w.text + " ";
+                    const wordCol = document.createElement('div');
+                    wordCol.className = 'word-column';
+                    if (w.link) wordCol.classList.add('link-next');
+
+                    if (w.tip && w.tip.trim() !== "") {
+                        const tipDiv = document.createElement('div');
+                        tipDiv.className = 'pronunciation-tip';
+                        tipDiv.innerText = w.tip;
+                        wordCol.appendChild(tipDiv);
+                    }
+
+                    const wordTextSpan = document.createElement('span');
+                    wordTextSpan.className = `word-text ${w.type}`;
+                    wordTextSpan.id = `word-${sentenceIdx}-${wordIdx}`;
+                    
+                    if (w.chunks && w.chunks.length > 0) {
+                        w.chunks.forEach(ck => {
+                            const chunkSpan = document.createElement('span');
+                            chunkSpan.className = 'letter-chunk';
+                            if (ck.focus === 'primary') chunkSpan.classList.add('chunk-primary');
+                            else if (ck.focus === 'secondary' || ck.focus === true) chunkSpan.classList.add('chunk-secondary');
+                            chunkSpan.innerText = ck.t;
+                            wordTextSpan.appendChild(chunkSpan);
+                        });
+                    } else {
+                        wordTextSpan.innerText = w.text;
+                    }
+
+                    wordTextSpan.onclick = (e) => {
+                        e.stopPropagation();
+                        speakText(w.text, 0.75);
+                        card.querySelectorAll('.word-text').forEach(el => el.classList.remove('active-word'));
+                        wordTextSpan.classList.add('active-word');
+                        updateInspector(sentenceIdx, w);
+                    };
+
+                    wordCol.appendChild(wordTextSpan);
+                    flowZone.appendChild(wordCol);
+
+                    if (w.pause === 'short' || w.pause === 'long') {
+                        const pauseContainer = document.createElement('div');
+                        pauseContainer.className = 'pause-container';
+                        const pSpan = document.createElement('span');
+                        pSpan.className = w.pause === 'short' ? 'pause-short' : 'pause-long';
+                        pSpan.innerText = w.pause === 'short' ? '|' : '||';
+                        pauseContainer.appendChild(pSpan);
+                        flowZone.appendChild(pauseContainer);
+                    }
+                });
+
+                const inspector = document.createElement('div');
+                inspector.className = `inspector-panel inspector-hidden`;
+                inspector.id = `inspector-${sentenceIdx}`;
+                inspector.innerHTML = `
+                    <div class="inspector-left">
+                        <div class="inspector-word" id="ins-word-${sentenceIdx}">Word</div>
+                        <div class="inspector-ipa" id="ins-ipa-${sentenceIdx}">/ipa/</div>
+                        <div class="inspector-desc" id="ins-desc-${sentenceIdx}">发音细节描述</div>
+                    </div>
+                `;
+
+                const transZone = document.createElement('div');
+                transZone.className = 'translation-zone';
+                transZone.innerText = "💡 意译参考： " + item.translation;
+
+                const ctrlPanel = document.createElement('div');
+                ctrlPanel.className = 'control-panel';
+                
+                const slowBtn = document.createElement('button');
+                slowBtn.className = 'btn btn-slow';
+                slowBtn.innerText = '🐢 慢速辨音示范';
+                slowBtn.onclick = () => speakText(fullText, 0.7, sentenceIdx, item.words);
+
+                const normalBtn = document.createElement('button');
+                normalBtn.className = 'btn';
+                normalBtn.innerText = '⚡ 常速连读跟读';
+                normalBtn.onclick = () => speakText(fullText, 0.95, sentenceIdx, item.words);
+
+                const fastBtn = document.createElement('button');
+                fastBtn.className = 'btn btn-fast';
+                fastBtn.innerText = '🚀 快速流利挑战';
+                fastBtn.onclick = () => speakText(fullText, 1.3, sentenceIdx, item.words);
+
+                ctrlPanel.appendChild(slowBtn);
+                ctrlPanel.appendChild(normalBtn);
+                ctrlPanel.appendChild(fastBtn);
+
+                card.appendChild(flowZone);
+                card.appendChild(inspector);
+                card.appendChild(transZone);
+                card.appendChild(ctrlPanel);
+                board.appendChild(card);
+            });
+        }
+
+        function updateInspector(sentenceIdx, wordData) { 
+            const panel = document.getElementById(`inspector-${sentenceIdx}`);
+            panel.classList.remove('inspector-hidden');
+            document.getElementById(`ins-word-${sentenceIdx}`).innerText = wordData.text.replace(/[^a-zA-Z']/g, "");
+            document.getElementById(`ins-ipa-${sentenceIdx}`).innerText = wordData.ipa || "/暂无音标/";
+            document.getElementById(`ins-desc-${sentenceIdx}`).innerText = wordData.detail || "多听标准示范，注意轻重读变化。";
+        }
+
+        function speakText(text, rate, sentenceIdx = -1, wordsArr = []) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const cleanText = text.replace(/[|]/g, '').trim();
+                const utterance = new SpeechSynthesisUtterance(cleanText);
+                utterance.lang = 'en-US'; 
+                utterance.rate = rate;
+
+                if (sentenceIdx !== -1 && wordsArr.length > 0) {
+                    utterance.onboundary = (event) => {
+                        if (event.name === 'word') {
+                            let charCount = 0;
+                            for (let i = 0; i < wordsArr.length; i++) {
+                                const wordStr = wordsArr[i].text;
+                                if (event.charIndex >= charCount && event.charIndex < charCount + wordStr.length + 1) {
+                                    const card = document.querySelectorAll('.sentence-card')[sentenceIdx];
+                                    if (card) {
+                                        card.querySelectorAll('.word-text').forEach(el => el.classList.remove('active-word'));
+                                        const target = document.getElementById(`word-${sentenceIdx}-${i}`);
+                                        if (target) {
+                                            target.classList.add('active-word');
+                                            updateInspector(sentenceIdx, wordsArr[i]);
+                                        }
+                                    }
+                                    break;
+                                }
+                                charCount += wordStr.length + 1;
+                            }
+                        }
+                    };
+                }
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("当前系统暂时无法调用系统 TTS 发音引擎。");
+            }
+        }
+
+        window.onload = () => {
+            fetchGlobalIndex();
+        };
+    </script>
+</body>
+</html>
